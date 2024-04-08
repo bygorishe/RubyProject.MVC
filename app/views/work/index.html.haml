@@ -1,0 +1,38 @@
+.image
+  .row
+    .col-md-3
+
+// кнопка выбора темы
+.left_controls
+  .select_theme
+  = render 'work/button_theme_select', locale: @current_locale
+
+%br
+
+.col-md-9
+  .image_display
+    .row.image
+      .col-md-12
+        %h2.up-theme{:title => 'theme_name'}
+          #{@selected_theme}
+-#
+-#       .col-md-12
+-#         %h2.up{:title => "Image file name"} 	//- название изображения
+-#           #{@selected_image_name}
+-#
+-#       .col-md-1
+-#         .img-left-side             //  - кнопка перелистывания влево
+-#           %h3{:title => "list to previous image"}
+-#             %i.fa.fa-chevron-circle-left.strong
+-#       .col-md-10 	- область отображения изображения
+-#         .img-center{:title => "Default image"}  // -изображение по умолчанию
+-#     %img{:alt => "Default Image", :src =>
+-# 'assets/pictures/raduga5обрез.jpg',
+-#  :title => "Default image",
+-# :style => "width:100%; height:100%;" }
+-#       .image_user_value{:title => "Expert value"}
+-#
+-#       .col-md-1
+-#         .img-right-side        //кнопка перелистывания вправо
+-#           %h3{:title => "list to next image"}
+-#             %i.fa.fa-chevron-circle-right
