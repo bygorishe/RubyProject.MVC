@@ -20,12 +20,12 @@ default: &default
 development:
   <<: *default
   database: rubydb_development
-  password: <%= Rails.application.secrets[:database][:password] %>
+  password: <%= Rails.application.credentials[:connectionString][:password] %>
 
 test:
   <<: *default
   database: rubydb_test
-  password: <%= Rails.application.secrets[:database][:password] %>
+  password: <%= Rails.application.credentials[:connectionString][:password] %>
 
 production:
   <<: *default
