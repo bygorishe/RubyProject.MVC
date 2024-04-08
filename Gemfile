@@ -11,6 +11,9 @@ gem "sprockets-rails"
 
 gem 'pg'
 
+gem "haml-rails", "~> 2.0"
+gem "html2haml"
+
 gem 'activerecord-reset-pk-sequence'
 # Use ActiveModel has_secure_password
 

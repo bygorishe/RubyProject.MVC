@@ -17,5 +17,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'work#index'
+  # root 'main#index'
 
 end
