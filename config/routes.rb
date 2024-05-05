@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'work#index'
   # root 'main#index'
-
+  #
+  get "Earth.png" => "work#index"
 end

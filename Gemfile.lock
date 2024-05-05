@@ -289,6 +289,7 @@ DEPENDENCIES
   debug
   haml-rails (~> 2.0)
   html2haml
+  i18n
   importmap-rails
   jbuilder
   pg

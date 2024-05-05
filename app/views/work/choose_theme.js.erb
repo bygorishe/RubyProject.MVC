@@ -10,7 +10,7 @@ $(document).click(function(e){
     }
     else {
         console.log(": In doc.click = OUT side content area"  );
-        $('.form_select').css({"display": "none"});
+        $('.form_select.css').css({"display": "none"});
 
         $('.select_theme').empty().html("<%= j render
 'work/button_theme_select' -%>");
