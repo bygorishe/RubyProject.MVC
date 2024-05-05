@@ -11,6 +11,8 @@ gem "sprockets-rails"
 
 gem 'pg'
 
+gem 'i18n'
+
 gem "haml-rails", "~> 2.0"
 gem "html2haml"
 

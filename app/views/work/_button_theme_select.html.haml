@@ -1,5 +1,7 @@
 = stylesheet_link_tag 'button__left.css'
 %button.button__left.theme
   = link_to 'select_theme_bt', choose_theme_path,
+   :format => "js",
    :title => "Select theme from your device folder",
-   locale: @current_locale, :format => "js", remote: true
+    locale: @current_locale,
+    remote: true

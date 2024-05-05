@@ -1,4 +1,19 @@
 = stylesheet_link_tag 'header.css'
+
+%p.locale
 .header
   = image_tag("Alliance.png", :alt => "Логотип", style: 'height:10%;width:10%;')
-  %h1 Добро пожаловать на сайт
+  .ru_link
+  = link_to image_tag("ru.png", alt: "", title: "Русский" ), locale: :ru
+  = link_to image_tag("en.png", alt: "", title: "English"), locale: :en
+  %b
+    = I18n.locale
+  %li.nav-item
+  %a.navbar-brand{:href => "http://rubyonrails.org"} Ruby on Rails Website
+  %li.nav-item
+  %a.nav-link= link_to t('.contact'), main_contacts_path
+  %li.nav-item
+  %a.nav-link= link_to t('.help'), main_help_path
+  %li.nav-item
+  %a.nav-link= link_to t('.home'), work_path
+
