@@ -1,7 +1,7 @@
 %h1 Editing image
-= render "form", image: @image
-%br/
-%div
-  = link_to "Show this image", @image
-  |
-  \#{link_to "Back to images", images_path}
+
+= render 'form'
+
+= link_to 'Show', @image
+
+= link_to 'Back', images_path

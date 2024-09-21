@@ -1,8 +1,15 @@
-%p{:style => "color: green"}= notice
-= render @value
-%div
-  = link_to "Edit this value", edit_value_path(@value)
-  |
-  \#{link_to "Back to values", values_path}
-  
-  \#{button_to "Destroy this value", @value, method: :delete}
+%p#notice= notice
+
+%p
+  %b User:
+  = @value.user_id
+%p
+  %b Image:
+  = @value.image_id
+%p
+  %b Value:
+  = @value.value
+
+= link_to 'Edit', edit_value_path(@value)
+\|
+= link_to 'Back', values_path

@@ -49,7 +49,7 @@ class ImagesController < ApplicationController
 
   # DELETE /images/1 or /images/1.json
   def destroy
-    @image.destroy!
+    @image.destroy
 
     respond_to do |format|
       format.html { redirect_to images_url, notice: "Image was successfully destroyed." }
@@ -65,6 +65,6 @@ class ImagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def image_params
-      params.require(:image).permit(:name, :file, :ave_value, :theme_id)
+      params.require(:image).permit(:file, :name, :ave_value, :theme_id)
     end
 end

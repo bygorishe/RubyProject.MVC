@@ -1,0 +1,29 @@
+.container.h-100.mt-3
+  .row.d-flex.justify-content-center.align-items-center.h-100
+    .col-lg-12.col-xl-11
+      .card.text-black{style: "border-radius: 25px;"}
+        .card-body.p-md-5
+          .row.justify-content-center
+            .col-md-10.col-lg-6.col-xl-5.order-2.order-lg-1
+              %p.text-center.h1.fw-bold.mb-5.mx-1.mx-md-4.mt-4 
+                = t('.title')
+              %form.mx-1.mx-md-4
+              = form_for(:session, url: sessions_path) do |f|
+                .d-flex.flex-row.align-items-center.mb-4
+                  %i.fas.fa-envelope.fa-lg.me-3.fa-fw
+                  .form-outline.flex-fill.mb-0
+                    = f.text_field :email, class: 'input form-control', id: "floating", placeholder: t('.email')
+                .d-flex.flex-row.align-items-center.mb-4
+                  %i.fas.fa-lock.fa-lg.me-3.fa-fw
+                  .form-outline.flex-fill.mb-0
+                    = f.password_field :password, class: 'input form-control', id: "floatingTextarea", placeholder: t('.password')
+                .d-flex.justify-content-center.mx-4.mb-3.mb-lg-4
+                  = f.submit t('.sign_in'), class:"btn btn-lg btn-dark"
+                .d-flex.justify-content-center.mx-4.mb-3.mb-lg-4
+                  %p
+                    = t('.new_user?')
+                    #{link_to t('.sign_up'), signup_path, class: "link-secondary"}
+                  -# = link_to t('.back'), index_path, class: "btn btn-dark"
+                  -# %button.btn.btn-primary.btn-lg{type: "button"} Register
+            -# .col-md-10.col-lg-6.col-xl-7.d-flex.align-items-center.order-1.order-lg-2
+            -#   = image_tag("/assets/pictures/register_picture.png", alt: "Register", class: "img img-fluid", style: "width: 50%;")

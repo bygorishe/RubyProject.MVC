@@ -1,0 +1,103 @@
+ru:
+  main:
+    index:
+      welcome_text: "Добро пожаловать в КХЛ Experteese"
+      work_link: "Приступим к работе!"
+      sign_up: "Зарегистрируйся сейчас!"
+
+    help:
+      page_title: "Помощь"
+      text: "Если Вам нужна помощь или у Вас есть какие-то вопросы, пишите"
+      email: "kurashkina.ma@edu.spbstu.ru"
+
+    contacts:
+      page_title: "Контакты"
+      name: "Мария Курашкина"
+      email: "kurashkina.ma@edu.spbstu.ru"
+      place: "Санкт-Петербургский Политехнический Университет Петра Великого"
+
+    about:
+      page_title: "О сайте"
+      about_text: >
+        Приложение предназначено для сбора оценок предпочтений пользователей.
+        
+        Пользователи выступают в роли экспертов. Их мнение крайне важно для экспертного сообщества.
+        
+        
+        На основе частных мнений экспертов вычисляются средние квалифицированные оценки. 
+        
+        Собранные в данном приложении данные представляют интерес для самих экспертов, так и для различных компаний, заинтересованных в прогнозах или оценках работы различных представителей Континентальной Хоккейной Лиги.
+
+  shared:
+    header:
+      logo_title: "Сезон 22/23"
+      home: "Главная"
+      help: "Помощь"
+      sign_in: "Вход"
+      sign_up: "Регистрация"
+      sign_out: "Выйти"
+      logo: "/assets/pictures/khl_logo_rus.png"
+
+    footer:
+      about: "О сайте"
+      contact: "Контакты"
+      dev_msg: "Методики разработки современных WEB-приложений"
+      author: "Курашкина Мария © 2023"
+      logo: "/assets/pictures/khl_logo_rus.png"
+
+  sessions:
+    new:
+      title: "Вход"
+      sign_in: "Войти"
+      sign_up: "Зарегистрироваться"
+      email: "E-mail"
+      password: "Пароль"
+      new_user?: "Нет аккаунта?"
+
+
+  users:
+    form:
+      title: "Регистрация"
+      name: "Имя"
+      email: "E-mail"
+      password: "Пароль"
+      password_confirmation: "Подтверждение пароля"
+      create_account: "Создать аккаунт"
+      back: "Назад"
+
+    show:
+      title: "Мой профиль"
+      avatar: "Аватар:"
+      name: "Имя:"
+      email: "Email:"
+      work: "Перейти к рабочей области"
+      sign_in: "Выполнить вход"
+
+
+  work:
+    index:
+      def_select_theme: "Выберите тему для оценки"
+      common_value: "средняя оценка"
+      total_values: "всего оценок"
+      make_decision: "Выберите свою оценку"
+
+    button_theme_select:
+      select_theme_bt: "выбрать тему"
+
+    choose_theme_from_arr:
+      select_theme: "выберите тему"
+
+    button_list_results:
+      results_list: "результаты"
+
+    button_save_decision:
+      save_decision: "сохранить"
+
+    display_theme:
+      select_theme: "Выберите тему для оценки"
+
+    results_list:
+      no_values: "Результаты по выбранной теме отсутствуют"
+      select_theme: "Выберите другую тему"
+      table_title: "Все экспертные оценки"
+      return_to_main: "На главную"

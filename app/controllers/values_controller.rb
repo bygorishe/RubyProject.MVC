@@ -49,7 +49,7 @@ class ValuesController < ApplicationController
 
   # DELETE /values/1 or /values/1.json
   def destroy
-    @value.destroy!
+    @value.destroy
 
     respond_to do |format|
       format.html { redirect_to values_url, notice: "Value was successfully destroyed." }
@@ -58,13 +58,11 @@ class ValuesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_value
       @value = Value.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def value_params
-      params.require(:value).permit(:user_id, :value, :image_id)
+      params.require(:value).permit(:user_id, :image_id, :value)
     end
 end

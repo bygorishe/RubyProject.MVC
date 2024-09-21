@@ -49,7 +49,7 @@ class ThemesController < ApplicationController
 
   # DELETE /themes/1 or /themes/1.json
   def destroy
-    @theme.destroy!
+    @theme.destroy
 
     respond_to do |format|
       format.html { redirect_to themes_url, notice: "Theme was successfully destroyed." }

@@ -31,6 +31,8 @@ User.create([
               {name: "Example User 1", email: "example@railstutorial1.org"},
               {name: "Example User 2", email: "example@railstutorial2.org"},
               {name: "Example User 3", email: "example@railstutorial3.org"},
+              {name: "2", email: "2@railstutorial.org",
+               password: "222222", password_confirmation: "222222"},
             ])
 
 Value.delete_all

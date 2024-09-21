@@ -1,0 +1,45 @@
+console.log("IN  results_list " );
+
+var resultsSize  = '<%= @result_size %>';
+console.log("compositeResultsSize = " + resultsSize );
+
+var overlayId = document.getElementById('overlay_m');
+console.log("1 IN list_results: overlayId = " + overlayId );
+
+function overlay() {
+  jQuery.noConflict();
+  (function ($) {
+    var overlayId = document.getElementById("overlay_m");
+    console.log( overlayId );
+    console.log("IN results_list: function overlay() = " + overlayId );
+    overlayId.style.visibility = (overlayId.style.visibility == "visible") ? "hidden" : "visible";
+      }
+  )(jQuery);
+
+}
+$('#overlay').click(function overlay(){
+});
+
+window.onclick = function(event) {
+    if (event.target == overlayId) {
+        overlayId.style.visibility = "hidden";
+        console.log("IN window.onclick: overlayId.style.visibility = hidden");
+    }
+};
+
+var span = document.getElementsByClassName("close")[0];
+console.log("IN list_results: span class= " + span );
+
+span.onclick = function() {
+    overlayId.style.visibility = "hidden";
+    console.log("ON: span.onclick: overlayId.style.display = " + overlayId.style.display );
+    console.log("ON: span.onclick: overlayId.style.visibility = " + overlayId.style.visibility );
+};
+
+$('.results_list').empty().html("<%= j render 'results_list' -%>");
+
+
+$(".results_list a, .pagination a").on("click", function(){
+    $.getScript(this.href);
+    return false;
+});

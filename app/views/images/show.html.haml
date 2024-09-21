@@ -1,8 +1,18 @@
-%p{:style => "color: green"}= notice
-= render @image
-%div
-  = link_to "Edit this image", edit_image_path(@image)
-  |
-  \#{link_to "Back to images", images_path}
-  
-  \#{button_to "Destroy this image", @image, method: :delete}
+%p#notice= notice
+
+%p
+  %b File:
+  = @image.file
+%p
+  %b Name:
+  = @image.name
+%p
+  %b Ave value:
+  = @image.ave_value
+%p
+  %b Theme:
+  = @image.theme_id
+
+= link_to 'Edit', edit_image_path(@image)
+
+= link_to 'Back', images_path

@@ -1,23 +1,22 @@
-= form_with(model: image) do |form|
-  - if image.errors.any?
-    %div{:style => "color: red"}
-      %h2
-        = pluralize(image.errors.count, "error")
-        prohibited this image from being saved:
+= form_for @image do |f|
+  - if @image.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@image.errors.count, "error")} prohibited this image from being saved:"
       %ul
-        - image.errors.each do |error|
-          %li= error.full_message
-  %div
-    = form.label :name, style: "display: block"
-    = form.text_field :name
-  %div
-    = form.label :file, style: "display: block"
-    = form.text_field :file
-  %div
-    = form.label :ave_value, style: "display: block"
-    = form.text_field :ave_value
-  %div
-    = form.label :theme_id, style: "display: block"
-    = form.number_field :theme_id
-  %div
-    = form.submit
+        - @image.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :file
+    = f.text_field :file
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :ave_value
+    = f.text_field :ave_value
+  .field
+    = f.label :theme_id
+    = f.number_field :theme_id
+  .actions
+    = f.submit 'Save'

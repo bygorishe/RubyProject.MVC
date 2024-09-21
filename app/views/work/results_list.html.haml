@@ -1,0 +1,35 @@
+.row.g-0.border.rounded.overflow-hidden.flex-md-row.mb-4.mt-4.shadow-sm.h-md-250.position-relative
+  .table-responsive
+  - if @results.blank?
+    .results.col
+      %h1.text-center.h1.fw-bold.mb-5.mx-1.mx-md-4.mt-4= t('.no_values')
+      %br
+      %h1.text-center.h1.fw-bold.mb-5.mx-1.mx-md-4.mt-4= t('.select_theme')
+
+    %br
+    %hr
+  - else
+    %table.table.table-striped.table-sm
+      .results.d-flex.justify-content-center
+        %h2.h2.fw-bold.mb-5.mx-1.mx-md-4.mt-4= t('.table_title')
+      %thead
+        %tr
+          %th Name
+          %th Image
+          %th Value
+      %tbody
+      - @results_paged.each do |composite_diag|
+        %tr.one_row
+          %td= composite_diag.name
+          %td= image_tag('/assets/pictures/' + composite_diag.file, {:width => "100", :height =>"100"})
+          %td= composite_diag.ave_value
+    %hr
+    .container.d-flex.justify-content-center
+      = paginate @results_paged
+    %br
+= link_to t(".return_to_main"), work_path,  class: "btn", title: "Go to main page"
+%br
+%br
+
+
+

@@ -1,4 +1,44 @@
-= stylesheet_link_tag 'header.css'
-.header
-  = image_tag("Alliance.png", :alt => "Логотип", style: 'height:10%;width:10%;')
-  %h1 Добро пожаловать на сайт
+-# %body
+%header
+    %nav.navbar.navbar-dark.bg-dark.navbar-expand-lg
+        .container-fluid
+            %button.navbar-toggler{"aria-controls" => "navbarTogglerDemo03", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarTogglerDemo03", "data-bs-toggle" => "collapse", type: "button"}
+                %span.navbar-toggler-icon
+            .d-flex
+                %a.navbar-brand.me-3.mb-1.d-flex.align-items-center{href: index_path}
+                    = image_tag("Alliance.png", alt: "Logo", height: "40", width: "40")
+                    %small{href: index_path}
+                        = t('.logo_title')
+                #navbarTogglerDemo03.collapse.navbar-collapse
+                    %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                        %li.nav-item
+                            %a.nav-link.active{"aria-current" => "page", href: index_path}
+                                = t('.home')
+                        %li.nav-item
+                            %a.nav-link{href: help_path}
+                                = t('.help')
+            %ul.navbar-nav.flex-row.d-none.d-md-flex.mt-2
+                %li.nav-item.me-3.me-lg-1
+                    = link_to image_tag("/assets/pictures/russia.png", alt: "", height: "40", width: "40", class: "d-inline-block align-top me-2", title: "Русский" ),
+                    locale: :ru, class: "dropdown-item"
+                %li.nav-item.mb-2.mb-lg-0
+                    = link_to image_tag("/assets/pictures/united-kingdom.png", alt: "", height: "40", width: "40", class: "d-inline-block align-top me-2", title: "English" ),
+                    locale: :en, class: "dropdown-item"
+                %li.nav-item.me-3.me-lg-1
+                    %p.nav-link.me-2= I18n.locale
+            %ul.navbar-nav.flex-row
+                - if signed_in?
+                    = gravatar_for current_user
+                    %li.nav-item.logged.me-3.me-lg-1.mt-2
+                        %p= link_to @current_user.email, current_user,
+                        class: "nav-link me-2",
+                        title: "Watch profile info"
+                    %li.nav-item.me-3.me-lg-1.mt-3
+                        = link_to t('.sign_out'), signout_path , method: "delete", class: "link-secondary"
+                - else
+                    %li.nav-item.me-3.me-lg-1
+                        = link_to t('.sign_in'), signin_path,
+                        class: "btn btn-outline-light me-2"
+                    %li.nav-item.me-3.me-lg-1
+                        = link_to t('.sign_up'), signup_path,
+                        class: "btn btn-outline-light"

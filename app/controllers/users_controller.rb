@@ -21,6 +21,8 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
+    logger.info "In users_controller#create: user_params = #{user_params.inspect}"
+
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -49,7 +51,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
-    @user.destroy!
+    @user.destroy
 
     respond_to do |format|
       format.html { redirect_to users_url, notice: "User was successfully destroyed." }
@@ -65,6 +67,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end

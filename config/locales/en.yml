@@ -30,4 +30,108 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  main:
+    index:
+      welcome_text: "Welcome to the KHL Experteese"
+      work_link: "Proceed to work!"
+      sign_up:
+
+    help:
+      page_title: "Help"
+      text: "If You need help or have any questions, write here"
+      email: "kurashkina.ma@edu.spbstu.ru"
+
+    contacts:
+      page_title: "Contacts"
+      name: "Maria Kurashkina"
+      email: "kurashkina.ma@edu.spbstu.ru"
+      place: "Peter the Great St.Petersburg Polytechnic University"
+
+    about:
+      page_title: "About"
+      about_text: >
+        The application is designed to collect estimates of user preferences.
+        
+        Users act as experts. Their opinion is extremely important for the expert community.
+
+
+        Based on the private opinions of experts, the average qualified estimates are calculated.
+        
+        The data collected in this application is of interest to the experts themselves, as well as to various companies interested in forecasts or assessments of the work of various representatives of the Kontinental Hockey League.
+
+  shared:
+    header:
+      logo_title: "Season 22/23"
+      home: "Home"
+      help: "Help"
+      sign_in: "Sign In"
+      sign_up: "Sign Up"
+      sign_out: "Sign out"
+      logo: "/assets/pictures/khl_logo_eng.png"
+
+    footer:
+      about: "About"
+      contact: "Contacts"
+      dev_msg: "Methods of development of modern WEB applications"
+      author: "Kurashkina Maria © 2023"
+      logo: "/assets/pictures/khl_logo_eng.png"
+
+  sessions:
+    new:
+      title: "Sign in"
+      sign_in: "Sign in"
+      sign_up: "Sign up"
+      email: "E-mail"
+      password: "Password"
+      new_user?: "Don't have an account? "
+
+  users:
+    form:
+      title: "Sign up"
+      name: "Name"
+      email: "E-mail"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      create_account: "Create account"
+      back: "Back"
+
+
+    show:
+      title: "My profile"
+      avatar: "Avatar:"
+      name: "Name:"
+      email: "Email:"
+      work: "Proceed to work"
+      sign_in: "Sign In"
+
+  work:
+    index:
+      def_select_theme: "Select theme to leave your answer"
+      common_value: "common value"
+      total_values: "total values"
+      make_decision: "Сhoose your rating"
+
+    button_theme_select:
+      select_theme_bt: "select theme"
+
+    choose_theme_from_arr:
+      select_theme: "choose theme"
+
+    button_list_results:
+      results_list: "list results"
+
+    button_save_decision:
+      save_decision: "save"
+
+    choose_theme:
+      select_theme: "select theme ch"
+
+    display_theme:
+      select_theme: "Select theme"
+
+    results_list:
+      no_values: "No Values results for selected theme"
+      select_theme: "Select other theme"
+      table_title: "All expert values"
+      return_to_main: "Return to main"
+

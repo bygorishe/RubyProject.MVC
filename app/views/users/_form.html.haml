@@ -1,17 +1,38 @@
-= form_with(model: user) do |form|
-  - if user.errors.any?
-    %div{:style => "color: red"}
-      %h2
-        = pluralize(user.errors.count, "error")
-        prohibited this user from being saved:
-      %ul
-        - user.errors.each do |error|
-          %li= error.full_message
-  %div
-    = form.label :name, style: "display: block"
-    = form.text_field :name
-  %div
-    = form.label :email, style: "display: block"
-    = form.text_field :email
-  %div
-    = form.submit
+.container.h-100.mt-3
+  .row.d-flex.justify-content-center.align-items-center.h-100
+    .col-lg-12.col-xl-11
+      .card.text-black{style: "border-radius: 25px;"}
+        .card-body.p-md-5
+          .row.justify-content-center
+            .col-md-10.col-lg-6.col-xl-5.order-2.order-lg-1
+              %p.text-center.h1.fw-bold.mb-5.mx-1.mx-md-4.mt-4
+                = t('.title')
+              %form.mx-1.mx-md-4
+              = form_for @user do |f|
+                .d-flex.flex-row.align-items-center.mb-4
+                  %i.fas.fa-user.fa-lg.me-3.fa-fw
+                  .form-outline.flex-fill.mb-0
+                    = f.text_field :name, class: 'input form-control', id: "floatingTextarea", placeholder: t('.name')
+                .d-flex.flex-row.align-items-center.mb-4
+                  %i.fas.fa-envelope.fa-lg.me-3.fa-fw
+                  .form-outline.flex-fill.mb-0
+                    = f.text_field :email, class: 'input form-control', id: "floatingTextarea", placeholder: t('.email')
+                .d-flex.flex-row.align-items-center.mb-4
+                  %i.fas.fa-lock.fa-lg.me-3.fa-fw
+                  .form-outline.flex-fill.mb-0
+                    = f.password_field :password, class: 'input form-control', id: "floatingTextarea", placeholder: t('.password')
+                .d-flex.flex-row.align-items-center.mb-4
+                  %i.fas.fa-key.fa-lg.me-3.fa-fw
+                  .form-outline.flex-fill.mb-0
+                    = f.password_field :password_confirmation, class: 'input form-control', id: "floatingTextarea", placeholder: t('.password_confirmation')
+                .d-flex.flex-row.align-items-center
+                  - if @user.errors.any?
+                    #error_explanation
+                      %h4.text-muted= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+                      %ul
+                        - @user.errors.full_messages.each do |message|
+                          %li.text-muted= message
+                .d-flex.justify-content-center.mx-4.mb-3.mb-lg-4
+                  = f.submit t('.create_account'), class:"btn btn-lg btn-dark"
+                .d-flex.justify-content-center.mx-4.mb-3.mb-lg-4
+                  = link_to t('.back'), index_path, class: "link-secondary"

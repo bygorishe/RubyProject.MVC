@@ -1,8 +1,12 @@
-%p{:style => "color: green"}= notice
-= render @theme
-%div
-  = link_to "Edit this theme", edit_theme_path(@theme)
-  |
-  \#{link_to "Back to themes", themes_path}
-  
-  \#{button_to "Destroy this theme", @theme, method: :delete}
+%p#notice= notice
+
+%p
+  %b Name:
+  = @theme.name
+%p
+  %b Qty items:
+  = @theme.qty_items
+
+= link_to 'Edit', edit_theme_path(@theme)
+\|
+= link_to 'Back', themes_path
